@@ -19,7 +19,7 @@ namespace tamoga
             this.FormClosed += GameScreen_FormClosed; // Ensure the main menu is hidden when this form is closed
         }
 
-       
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -29,12 +29,17 @@ namespace tamoga
             label3.Hide();      // Label: "Choose a name"
             textBox1.Hide();    // Input box
             button1.Hide();
-            pictureBox2.Visible = true;// Confirm button
+            regcat.Visible = true;// Confirm button
         }
 
         private void GameScreen_FormClosed(object sender, FormClosedEventArgs e)
         {
-           
+            this.Text = DateTime.Now.ToString("");
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.clock.Text = DateTime.Now.ToString("hh:mm:ss");
         }
     }
 }
